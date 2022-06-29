@@ -54,12 +54,14 @@ as well as update the user interface to reflect the played move
 */
 gameState[clickedCellIndex] = currentPlayer;
 
-if (currentPlayer == 0) {
-  document.getElementById(clickedCellIndex).style.color = "blue";
-} 
+  if(currentPlayer == 'O')
+    clickedCell.style.color = "white";
+  else
+    clickedCell.style.color = "#535353";
+
 clickedCell.innerHTML = currentPlayer;
 
-  
+
 }
 
 function handlePlayerChange() {
