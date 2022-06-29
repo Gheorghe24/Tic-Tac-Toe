@@ -53,7 +53,12 @@ We update our internal game state to reflect the played move,
 as well as update the user interface to reflect the played move
 */
 gameState[clickedCellIndex] = currentPlayer;
+
+if (currentPlayer == 0) {
+  document.getElementById(clickedCellIndex).style.color = "blue";
+} 
 clickedCell.innerHTML = currentPlayer;
+
   
 }
 
@@ -114,6 +119,7 @@ Please note that the getAttribute will return a string value. Since we need an a
 integer(number)
 */
 const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+
 
 /* 
 Next up we need to check whether the call has already been played, 
