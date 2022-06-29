@@ -129,15 +129,19 @@ if (gameState[clickedCellIndex] !== "" || !gameActive) {
 /* 
 If everything is in order we will proceed with the game flow
 */ 
+
 handleCellPlayed(clickedCell, clickedCellIndex);
+
     handleResultValidation();
 }
+
 function handleRestartGame() {
   gameActive=true;
   currentPlayer = "X";
   gameState.innerHTML = ["","","","","","","","",""];
+  gameState = ["","","","","","","","",""];
   document.querySelectorAll(".cell").forEach(cell => cell.innerHTML = "")
-  
+ // window.location.reload();
 }
 /*
 And finally we add our event listeners to the actual game cells, as well as our 
